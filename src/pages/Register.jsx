@@ -1,9 +1,16 @@
-// === File: studnest-react/src/pages/Register.jsx
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/register.css';
 
 const Register = () => {
+  const navigate = useNavigate();
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    // After successful registration, redirect to Home
+    navigate('/');
+  };
+
   return (
     <>
       <header className="navbar">
@@ -19,7 +26,7 @@ const Register = () => {
         <div className="register-card">
           <h2>Create Your Account 📝</h2>
           <p>Join StudNest and find your perfect stay</p>
-          <form className="register-form">
+          <form className="register-form" onSubmit={handleRegister}>
             <label>Full Name</label>
             <input type="text" required placeholder="John Doe" />
 
@@ -33,7 +40,9 @@ const Register = () => {
             <input type="password" required placeholder="••••••••" />
 
             <button type="submit" className="btn">Register</button>
-            <p className="login-link">Already have an account? <Link to="/login">Login here</Link></p>
+            <p className="login-link">
+              Already have an account? <Link to="/login">Login here</Link>
+            </p>
           </form>
         </div>
       </section>

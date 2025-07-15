@@ -1,9 +1,16 @@
-// === File: studnest-react/src/pages/Login.jsx
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/login.css';
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    navigate('/');
+  };
+
   return (
     <>
       <header className="navbar">
@@ -18,7 +25,7 @@ const Login = () => {
         <div className="login-card">
           <h2>Welcome Back 👋</h2>
           <p>Please log in to continue</p>
-          <form className="login-form">
+          <form className="login-form" onSubmit={handleLogin}>
             <label>Email address</label>
             <input type="email" placeholder="you@example.com" required />
 
@@ -26,7 +33,9 @@ const Login = () => {
             <input type="password" placeholder="••••••••" required />
 
             <button type="submit" className="btn">Login</button>
-            <p className="register-link">Don't have an account? <Link to="/register">Create now</Link></p>
+            <p className="register-link">
+              Don't have an account? <Link to="/register">Create now</Link>
+            </p>
           </form>
         </div>
       </section>
