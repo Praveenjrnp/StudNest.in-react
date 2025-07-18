@@ -4,15 +4,17 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import ListProperty from './pages/ListProperty';
+import HostelListingPage from './pages/HostelListingPage';
 
 function App() {
   return (
     <Router>
-        <Routes>
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/list-property" element={<ListProperty />} />
+        <Route path="/hostels" element={<HostelListingPage />} />
       </Routes>
     </Router>
   );
