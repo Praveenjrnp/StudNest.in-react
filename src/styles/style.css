@@ -403,3 +403,34 @@ body {
   color: #999;
   border-top: 1px solid #eee;
 }
+
+
+
+.contact-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', sans-serif;
+  margin-top: 80px;  /* This pushes content below the navbar */
+}
+
+.contact-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-container p {
+  font-size: 16px;
+}
+
+.contact-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-container ul li {
+  margin-bottom: 10px;
+}

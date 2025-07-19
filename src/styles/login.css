@@ -79,20 +79,26 @@ body {
   border-radius: 8px;
 }
 
-.btn {
-  background-color: #000000;
-  color: #fff;
-  padding: 0.75rem;
-  border: none;
+.btn-login {
+  background-color: #f97316;
+  color: #ffffff !important;
+  padding: 8px 16px;
   border-radius: 8px;
-  font-size: 1rem;
+  font-weight: 500;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
 
-.btn:hover {
-  background-color: #1d1d1d;
+.btn-login:hover {
+  background-color: #ea580c;
 }
+
+.btn-login:active {
+  color: #000000 !important;
+}
+
 
 .register-link {
   margin-top: 1rem;
