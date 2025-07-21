@@ -15,15 +15,12 @@ body {
 
 /* Navbar */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #fff;
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 1000;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
 }
 
 .navbar .logo {
@@ -96,21 +93,22 @@ body {
 .hero {
   text-align: center;
   padding: 4rem 2rem;
-  background-image: url('//hostel_background_image.jpeg');
+  background-image: url('/public/hostel_background_image.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 60vh;
-  max-height: 500px;
+  height: 250vh;
+  max-height: 650px;
   color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .hero-search {
-  position: absolute;
-  top: 6rem;
+   position: absolute;
+  top: 6rem; /* 🔁 Pehle 2rem tha, isse 6rem kar */
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -126,8 +124,10 @@ body {
   border-radius: 12px;
   overflow: hidden;
   width: 100%;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  box-shadow: 0 0 20px rgb(255, 255, 255);
+  
 }
+
 .search-bar input {
   flex: 1;
   padding: 1rem;
@@ -136,11 +136,17 @@ body {
   outline: none;
   color: #333;
 }
+.search-bar i {
+  font-size: 1.1rem;
+  color: #000000;
+}
+
 .search-icon {
   margin-left: 1rem;
   margin-right: 0.7rem;
   margin-top: 1rem;
 }
+
 .location-btn {
   display: flex;
   align-items: center;
@@ -152,78 +158,124 @@ body {
   font-weight: 500;
   font-size: 0.95rem;
   cursor: pointer;
+  transition: background 0.3s;
 }
+
 .location-btn:hover {
   background-color: #ea580c;
 }
+
 .hero h1 {
-  font-size: 3rem;
-  color: #000000;
-  /* text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);  */
+  font-size: 4rem;
+  text-shadow: 0 2px 4px rgba(255,255, 255, 0.6);;
+  margin-bottom: 1rem;
 }
 
 .hero p {
-  color: #000000;
-  /* text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);   */
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.hero-text {
+  margin-top: 9rem; /* Adjust as needed */
+  text-align: center;
+  z-index: 1;
+}
+
+.hero-section {
+  background-image: url('https://i.ibb.co/KxJz9Yy/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+  padding-top: 80px; /* same height as navbar */
+  height: calc(100vh - 80px);
 }
 
 
-/* City Dropdowns */
+/* Make sure the city-bar is visible */
 .city-bar {
-  display: flex;
+  display: flex !important; /* override any display:none you had */
   justify-content: center;
   flex-wrap: wrap;
   gap: 1.5rem;
   background-color: #f8f9fa;
-  padding: 1rem;
+  padding: 1rem 2rem;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #ccc;
+  margin: 2rem 0; /* Add some vertical spacing */
 }
+
+/* Dropdown container */
 .city-dropdown {
   position: relative;
+  min-width: 140px;
 }
+
+/* Button styling */
 .city-btn {
   background: none;
   border: none;
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
   color: #333;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
 }
+
 .city-btn:hover {
   color: #f97316;
+  background-color: #fff3e0;
 }
+
+/* Dropdown menu */
 .dropdown-menu {
   position: absolute;
-  top: 120%;
+  top: 110%;
   left: 0;
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  padding: 0.5rem 0;
-  border-radius: 6px;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 0.3rem 0;
+  border-radius: 8px;
   list-style: none;
   display: none;
   z-index: 1000;
-  min-width: 140px;
-}
-.dropdown-menu li {
-  padding: 8px 16px;
+  min-width: 160px;
   font-size: 0.95rem;
-  color: #333;
-  cursor: pointer;
 }
+
+.dropdown-menu li {
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
 .dropdown-menu li:hover {
   background-color: #f3f3f3;
 }
+
+/* Show dropdown on hover */
 .city-dropdown:hover .dropdown-menu {
   display: block;
 }
+
+/* Arrow next to city names */
 .arrow {
   font-size: 0.8rem;
+  transition: transform 0.3s ease;
 }
+
+/* Optional: rotate arrow on hover */
+.city-dropdown:hover .arrow {
+  transform: rotate(180deg);
+}
+
 
 /* Property Categories */
 .property-categories {
@@ -434,3 +486,5 @@ body {
 .contact-container ul li {
   margin-bottom: 10px;
 }
+
+

@@ -35,22 +35,60 @@ const Home = () => {
             </button>
           </div>
         </div>
-        <h1>Book Your Hostel Now</h1>
-        <p>StudNest makes it easy to find verified student accommodations.</p>
+
+        <div className="hero-text">
+          <h1>Book Your Hostel/PG Now</h1>
+          <p>StudNest makes it easy to find verified student accommodations.</p>
+        </div>
       </section>
 
       <section className="city-bar">
-        {["Gwalior", "Mumbai", "Mathura", "Pune", "Ahemdabad"].map((city, index) => (
-          <div className="city-dropdown" key={index}>
-            <button className="city-btn">{city} <span className="arrow">&#9662;</span></button>
-            <ul className="dropdown-menu">
-              <li>Area 1</li>
-              <li>Area 2</li>
-              <li>Area 3</li>
-            </ul>
-          </div>
-        ))}
+        <div className="city-dropdown">
+          <button className="city-btn">Gwalior <span className="arrow">&#9662;</span></button>
+          <ul className="dropdown-menu">
+            <li>Kampoo</li>
+            <li>Morar</li>
+            <li>Gole ka mandir</li>
+          </ul>
+        </div>
+
+        <div className="city-dropdown">
+          <button className="city-btn">Mumbai <span className="arrow">&#9662;</span></button>
+          <ul className="dropdown-menu">
+            <li>Andheri</li>
+            <li>Borivali</li>
+            <li>Thane</li>
+          </ul>
+        </div>
+
+        <div className="city-dropdown">
+          <button className="city-btn">Mathura <span className="arrow">&#9662;</span></button>
+          <ul className="dropdown-menu">
+            <li>Goverdhan Chauraha</li>
+            <li>Chaumuhan</li>
+            <li>Jait</li>
+          </ul>
+        </div>
+
+        <div className="city-dropdown">
+          <button className="city-btn">Pune <span className="arrow">&#9662;</span></button>
+          <ul className="dropdown-menu">
+            <li>Kalyani Nagar</li>
+            <li>Koregaon Park</li>
+            <li>Thane</li>
+          </ul>
+        </div>
+
+        <div className="city-dropdown">
+          <button className="city-btn">Ahemdabad <span className="arrow">&#9662;</span></button>
+          <ul className="dropdown-menu">
+            <li>Satellite</li>
+            <li>Bopal</li>
+            <li>Thaltej</li>
+          </ul>
+        </div>
       </section>
+
 
       <section className="property-categories">
         <h2 className="property-heading">Choose your Preference</h2>
